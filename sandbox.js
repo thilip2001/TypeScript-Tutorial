@@ -34,5 +34,21 @@ character = "hello";
 age = 40;
 isLoggedIn = true;
 //arrays 
+var ninjas = [];
+ninjas.push("Hello");
 //union types
+var mixed = [];
+mixed.push("Hello");
+mixed.push(20);
+// mixed.push(true) <--not valid type --->
+console.log(mixed);
+var uid;
+uid = "Hello";
+uid = 20;
+console.log(typeof (uid));
 //objects
+var ninjaOne;
+ninjaOne = { name: "Thilip", age: 20 };
+var ninjaTwo;
+ninjaTwo = { name: "Thiliban", age: 20, beltColor: "Red" };
+console.log(ninjaTwo);

@@ -52,10 +52,35 @@
     isLoggedIn = true
 
 //arrays 
+    let ninjas :string[] = [];
 
+    ninjas.push("Hello")
 
 //union types
+    let mixed : (string|number)[] = [];
+    mixed.push("Hello")
+    mixed.push(20)
+    // mixed.push(true) <--not valid type --->
+    console.log(mixed);
 
+    let uid:string|number;
 
+    uid = "Hello"
+    uid = 20;
+
+    console.log(typeof(uid));
+    
 //objects
+    let ninjaOne :object;
+    ninjaOne = {name:"Thilip", age:20}
 
+    let ninjaTwo :{
+        name :string,
+        age :number,
+        beltColor:string
+    }
+
+    ninjaTwo = {name:"Thiliban", age:20, beltColor:"Red"}
+
+    console.log(ninjaTwo);
+    
