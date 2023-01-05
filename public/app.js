@@ -26,6 +26,15 @@
 // greetPerson(me)
 //<------------------------------------------------------------------------------------------------------------------------------------->
 import { Invoice } from "./classes/invoice.js";
+import { Payment } from "./classes/payment.js";
+let docOne;
+let docTwo;
+docOne = new Invoice("Thilp", "Web work", 2500);
+docTwo = new Payment("mario", "plumbing work", 700);
+let docs = [];
+docs.push(docOne);
+docs.push(docTwo);
+console.log(docs);
 const invOne = new Invoice("mario", "work on the mario website", 250);
 const invTwo = new Invoice("pyt", "work on the pyt website", 500);
 let invoices = [];
@@ -33,7 +42,7 @@ invoices.push(invOne);
 invoices.push(invTwo);
 console.log(invoices);
 invoices.forEach(inv => {
-    console.log(inv.client, inv.details, inv.amount, inv.format());
+    console.log(inv.client, inv.amount, inv.format());
 });
 const form = document.querySelector(".new-item-form");
 const type = document.querySelector('#type');
@@ -47,5 +56,13 @@ const amount = document.querySelector('#amount');
 // console.log(amount);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+    let doc;
+    if (type.value === 'invoice') {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    else {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    }
+    // console.log(type.value,tofrom.value, details.value, amount.valueAsNumber);
+    console.log(doc);
 });
